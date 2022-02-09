@@ -1,20 +1,16 @@
-use alloc::alloc::Global;
-pub use core::alloc::Allocator;
-enum VectorType{
-    Integer(isize),
-    UnsingedInteger(usize),
-    Float(f64)
+use std::fmt;
+pub struct Matrix<T,C,R,S>{
+    pub data: S,
+    _phantoms: PhantomData<(T, R, C)>,
 }
-
-pub struct Matrix1D<T, A: Allocator = Global>{
-}
-impl <T> Matrix1D<T> {
-    pub const fn new() -> Self{
-        Matrix1D{
-
-        }
+impl<T, R, C, S: fmt::Debug> fmt::Debug for Matrix<T, R, C, S> {
+    fn fmt(&self, formatter: &mut fmt::Formatter<'_>) -> Result<(), fmt::Error> {
+        self.data.fmt(formatter)
     }
-
 }
+
+impl <T,R,C,S> Default for Matrix<T,R,C,S>
+where
+     T:scalar,
 
 
