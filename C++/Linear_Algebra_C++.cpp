@@ -1,22 +1,29 @@
 ﻿
 namespace linearAlgebra {
 	
-	union arraytype{
-		long double *array_float;
-		long long int *array_int;
-		char *array_char;
-		bool *array_boolean;
-	};
-	template <typename array >
-	class Matrix {
-		arraytype arrayType;
+	namespace Matrix {
 
+		template <typename Mat>
+		class Matrix1d {
+		private:
+			Mat _data[];
+		public:
+			
+			Mat new_(int num){
+				_data[num];
+			}
 
-		
-	};
+			Matrix1d operator [] (int num) {
+				_data[num];
+			}
+		};
+	}
 }
 
+using namespace linearAlgebra::Matrix;
 int main() {
-	//linearAlgebra::Matrix::
+	Matrix1d<double> test1;
+
+	test1[3];
 }
 
