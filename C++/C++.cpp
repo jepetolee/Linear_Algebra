@@ -1,7 +1,6 @@
 ﻿namespace linearAlgebra {
 
 	namespace Matrix {
-
 		template <typename Mat>
 		class Matrix1d {
 		private:
@@ -25,5 +24,6 @@ int main() {
 	Matrix1d<double> test1;
 	constexpr int size = 3;
 	test1[size];
+	
 }
 
