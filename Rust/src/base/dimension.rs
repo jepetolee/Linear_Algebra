@@ -171,14 +171,3 @@ unsafe impl<const T:usize>Dim for Const<T>{
         Self
     }
 }
-impl<const T:usize>DimName for Const<T>{
-    const USIZE: usize = T;
-    #[inline]
-    fn name() -> Self {
-       Self
-    }
-    #[inline]
-    fn dim() -> usize {
-       T
-    }
-}
